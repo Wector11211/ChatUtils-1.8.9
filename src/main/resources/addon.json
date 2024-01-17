@@ -1,9 +1,9 @@
 {
-  "name": "Addon Template",
-  "description": "A LabyMod 3 1.8.9 addon with Mixin support",
+  "name": "ChatPeekAddon",
+  "description": "Hold a key to preview full chat",
   "author": "Wector11211",
   "icon": "https://icon.com/icon.png",
   "uuid": "%uuid%",
-  "mainClass": "dev.wector11211.labymod.addons.example.ExampleAddon",
   "transformerClass": "dev.wector11211.labymod.addons.example.mixin.MixinLoader"
+  "mainClass": "dev.wector11211.labymod.addons.example.ChatPeekAddon",
 }
