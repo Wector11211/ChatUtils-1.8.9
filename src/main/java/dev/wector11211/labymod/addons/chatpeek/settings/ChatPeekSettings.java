@@ -1,4 +1,4 @@
-package dev.wector11211.labymod.addons.example.settings;
+package dev.wector11211.labymod.addons.chatpeek.settings;
 
 import com.google.common.collect.Lists;
 import com.google.gson.JsonElement;

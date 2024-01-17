@@ -1,4 +1,4 @@
-package dev.wector11211.labymod.addons.example;
+package dev.wector11211.labymod.addons.chatpeek;
 
 import com.google.common.collect.Lists;
 import com.google.gson.JsonElement;
@@ -12,8 +12,8 @@ import org.lwjgl.input.Keyboard;
 
 import java.util.List;
 
-import static dev.wector11211.labymod.addons.example.settings.ChatPeekSettings.ENABLED;
-import static dev.wector11211.labymod.addons.example.settings.ChatPeekSettings.HOTKEY;
+import static dev.wector11211.labymod.addons.chatpeek.settings.ChatPeekSettings.ENABLED;
+import static dev.wector11211.labymod.addons.chatpeek.settings.ChatPeekSettings.HOTKEY;
 
 public class ChatPeekAddon extends LabyModAddon {
 

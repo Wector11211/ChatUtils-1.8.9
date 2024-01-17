@@ -1,6 +1,6 @@
-package dev.wector11211.labymod.addons.example.ams;
+package dev.wector11211.labymod.addons.chatpeek.ams;
 
-import dev.wector11211.labymod.addons.example.ChatPeekAddon;
+import dev.wector11211.labymod.addons.chatpeek.ChatPeekAddon;
 import net.labymod.core.asm.global.ClassEditor;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiNewChat;
