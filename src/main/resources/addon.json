@@ -4,6 +4,6 @@
   "author": "Wector11211",
   "icon": "https://icon.com/icon.png",
   "uuid": "%uuid%",
-  "transformerClass": "dev.wector11211.labymod.addons.example.mixin.MixinLoader"
   "mainClass": "dev.wector11211.labymod.addons.example.ChatPeekAddon",
+  "transformerClass": "dev.wector11211.labymod.addons.example.ams.ChatRendererTransformer"
 }
