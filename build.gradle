@@ -43,3 +43,9 @@ minecraft {
 // Java
 sourceCompatibility = targetCompatibility = 1.8
 compileJava.options.encoding = "UTF-8"
+
+reobf {
+	jar {
+		useNotchSrg()
+	}
+}
