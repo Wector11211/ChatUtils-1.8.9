@@ -1,9 +1,9 @@
 package dev.wector11211.labymod.addons.chatpeek.ams;
 
 import dev.wector11211.labymod.addons.chatpeek.utils.Debug;
-import net.labymod.core.asm.global.ClassEditor;
 import net.minecraft.launchwrapper.IClassTransformer;
 import org.objectweb.asm.ClassReader;
+import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.ClassWriter;
 
 public class ChatRendererTransformer implements IClassTransformer {
@@ -13,11 +13,14 @@ public class ChatRendererTransformer implements IClassTransformer {
             if ("net.labymod.ingamechat.renderer.ChatRenderer".equals(name)) {
                 Debug.logger().info("Transforming ChatRenderer class (" + name + ")");
 
-                ClassEditor editor = new ChatPeekEditor();
 
                 ClassReader reader = new ClassReader(basicClass);
                 ClassWriter writer = new ClassWriter(reader, 3);
-                editor.accept(name, writer);
+
+                ClassVisitor editor = writer;
+                editor = new ChatPeekEditor(editor);
+                editor = new PreserveScrollEditor(editor, reader.getClassName());
+
                 reader.accept(editor, 0);
 
                 return writer.toByteArray();

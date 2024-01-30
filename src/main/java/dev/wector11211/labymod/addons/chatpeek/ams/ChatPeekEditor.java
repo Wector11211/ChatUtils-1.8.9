@@ -4,13 +4,15 @@ import dev.wector11211.labymod.addons.chatpeek.ChatUtilsAddon;
 import net.labymod.core.asm.global.ClassEditor;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiNewChat;
+import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
 public class ChatPeekEditor extends ClassEditor {
     public static final String OWNER = ChatPeekEditor.class.getName().replace(".", "/");
-    public ChatPeekEditor() {
+    public ChatPeekEditor(ClassVisitor classVisitor) {
         super(ClassEditorType.CLASS_VISITOR);
+        this.cv = classVisitor;
     }
 
     @Override

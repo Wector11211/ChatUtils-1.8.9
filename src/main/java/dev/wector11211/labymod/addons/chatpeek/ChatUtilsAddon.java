@@ -31,6 +31,7 @@ public class ChatUtilsAddon extends LabyModAddon {
     @Override
     public void loadConfig() {
         ENABLED.init(getConfig(), "enabled", true, JsonElement::getAsBoolean);
+        PRESERVE_SCROLL.init(getConfig(), "preserve-scroll", false, JsonElement::getAsBoolean);
         PEEK_HOTKEY.init(getConfig(), "peek-hotkey", Keyboard.KEY_NONE, JsonElement::getAsInt);
     }
 
@@ -46,5 +47,9 @@ public class ChatUtilsAddon extends LabyModAddon {
 
     public static boolean isPeek() {
         return ENABLED.get() && Keyboard.isKeyDown(PEEK_HOTKEY.get());
+    }
+
+    public static boolean isScrollPreserved() {
+        return ENABLED.get() && PRESERVE_SCROLL.get();
     }
 }
