@@ -1,6 +1,6 @@
 package dev.wector11211.labymod.addons.chatpeek.ams;
 
-import dev.wector11211.labymod.addons.chatpeek.ChatPeekAddon;
+import dev.wector11211.labymod.addons.chatpeek.ChatUtilsAddon;
 import net.labymod.core.asm.global.ClassEditor;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiNewChat;
@@ -37,10 +37,10 @@ public class ChatPeekEditor extends ClassEditor {
     }
 
     public static int getUpdateCounterInjector(int getUpdateCounter) {
-        return ChatPeekAddon.isPeek() ? 0 : getUpdateCounter;
+        return ChatUtilsAddon.isPeek() ? 0 : getUpdateCounter;
     }
 
     public static int getLineCountInjector(int getLineCount) {
-        return ChatPeekAddon.isPeek() ? GuiNewChat.calculateChatboxHeight(Minecraft.getMinecraft().gameSettings.chatHeightFocused) / 9 : getLineCount;
+        return ChatUtilsAddon.isPeek() ? GuiNewChat.calculateChatboxHeight(Minecraft.getMinecraft().gameSettings.chatHeightFocused) / 9 : getLineCount;
     }
 }

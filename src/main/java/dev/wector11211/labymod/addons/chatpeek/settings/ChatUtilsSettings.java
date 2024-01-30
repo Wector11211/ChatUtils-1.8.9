@@ -9,9 +9,9 @@ import java.util.function.Function;
 
 import static net.labymod.utils.manager.ConfigManager.GSON;
 
-public class ChatPeekSettings<T> {
-    public static final ChatPeekSettings<Boolean> ENABLED = new ChatPeekSettings<>();
-    public static final ChatPeekSettings<Integer> HOTKEY = new ChatPeekSettings<>();
+public class ChatUtilsSettings<T> {
+    public static final ChatUtilsSettings<Boolean> ENABLED = new ChatUtilsSettings<>();
+    public static final ChatUtilsSettings<Integer> HOTKEY = new ChatUtilsSettings<>();
 
     private String attribute;
     private T value;
@@ -38,7 +38,7 @@ public class ChatPeekSettings<T> {
         this.value = value;
     }
 
-    public static List<ChatPeekSettings<?>> values() {
+    public static List<ChatUtilsSettings<?>> values() {
         return Lists.newArrayList(ENABLED, HOTKEY);
     }
 }

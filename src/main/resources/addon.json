@@ -1,9 +1,9 @@
 {
-  "name": "ChatPeekAddon",
-  "description": "Hold a key to preview full chat",
+  "uuid": "%uuid%",
+  "name": "Chat Utils",
+  "description": "Adds chat peek feature and preserves chat scrolling",
   "author": "Wector11211",
   "icon": "https://icon.com/icon.png",
-  "uuid": "%uuid%",
-  "mainClass": "dev.wector11211.labymod.addons.chatpeek.ChatPeekAddon",
+  "mainClass": "dev.wector11211.labymod.addons.chatpeek.ChatUtilsAddon",
   "transformerClass": "dev.wector11211.labymod.addons.chatpeek.ams.ChatRendererTransformer"
 }

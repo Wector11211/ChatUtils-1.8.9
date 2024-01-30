@@ -46,6 +46,6 @@ compileJava.options.encoding = "UTF-8"
 
 reobf {
 	jar {
-		useNotchSrg()
+//		useNotchSrg()
 	}
 }

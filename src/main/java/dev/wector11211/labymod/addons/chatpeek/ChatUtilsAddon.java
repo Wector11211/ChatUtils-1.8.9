@@ -12,10 +12,10 @@ import org.lwjgl.input.Keyboard;
 
 import java.util.List;
 
-import static dev.wector11211.labymod.addons.chatpeek.settings.ChatPeekSettings.ENABLED;
-import static dev.wector11211.labymod.addons.chatpeek.settings.ChatPeekSettings.HOTKEY;
+import static dev.wector11211.labymod.addons.chatpeek.settings.ChatUtilsSettings.ENABLED;
+import static dev.wector11211.labymod.addons.chatpeek.settings.ChatUtilsSettings.HOTKEY;
 
-public class ChatPeekAddon extends LabyModAddon {
+public class ChatUtilsAddon extends LabyModAddon {
 
     @Override
     public void onEnable() {
