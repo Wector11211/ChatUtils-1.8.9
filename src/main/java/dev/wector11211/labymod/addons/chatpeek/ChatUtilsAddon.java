@@ -2,6 +2,7 @@ package dev.wector11211.labymod.addons.chatpeek;
 
 import com.google.common.collect.Lists;
 import com.google.gson.JsonElement;
+import dev.wector11211.labymod.addons.chatpeek.settings.SettingsRegistrar;
 import dev.wector11211.labymod.addons.chatpeek.utils.Debug;
 import net.labymod.addon.online.AddonInfoManager;
 import net.labymod.api.LabyModAddon;
@@ -15,8 +16,7 @@ import org.lwjgl.input.Keyboard;
 
 import java.util.List;
 
-import static dev.wector11211.labymod.addons.chatpeek.settings.ChatUtilsSettings.ENABLED;
-import static dev.wector11211.labymod.addons.chatpeek.settings.ChatUtilsSettings.HOTKEY;
+import static dev.wector11211.labymod.addons.chatpeek.settings.ChatUtilsSettings.*;
 
 public class ChatUtilsAddon extends LabyModAddon {
 
@@ -31,26 +31,20 @@ public class ChatUtilsAddon extends LabyModAddon {
     @Override
     public void loadConfig() {
         ENABLED.init(getConfig(), "enabled", true, JsonElement::getAsBoolean);
-        HOTKEY.init(getConfig(), "hotkey", Keyboard.KEY_NONE, JsonElement::getAsInt);
+        PEEK_HOTKEY.init(getConfig(), "peek-hotkey", Keyboard.KEY_NONE, JsonElement::getAsInt);
     }
 
     @Override
     protected void fillSettings(List<SettingsElement> options) {
-        BooleanElement enableElement = new BooleanElement(
-                "Enabled",
-                this,
-                new ControlElement.IconData(Material.EMERALD),
-                "enabled", ENABLED.get());
+        SettingsRegistrar registrar = new SettingsRegistrar(this);
 
-        KeyElement keyElement = new KeyElement("Chat Peek Hotkey",
-                this,
-                new ControlElement.IconData(Material.LEVER),
-                "hotkey", HOTKEY.get());
-
-        options.addAll(Lists.newArrayList(enableElement, keyElement));
+        options.addAll(Lists.newArrayList(
+                registrar.register(ENABLED, "Enabled", Material.EMERALD, BooleanElement::new),
+                registrar.register(PEEK_HOTKEY, "Chat Peek Hotkey", Material.LEVER, KeyElement::new)
+        ));
     }
 
     public static boolean isPeek() {
-        return ENABLED.get() && Keyboard.isKeyDown(HOTKEY.get());
+        return ENABLED.get() && Keyboard.isKeyDown(PEEK_HOTKEY.get());
     }
 }

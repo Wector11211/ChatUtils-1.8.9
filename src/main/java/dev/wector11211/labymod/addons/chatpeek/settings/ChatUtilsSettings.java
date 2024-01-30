@@ -11,7 +11,7 @@ import static net.labymod.utils.manager.ConfigManager.GSON;
 
 public class ChatUtilsSettings<T> {
     public static final ChatUtilsSettings<Boolean> ENABLED = new ChatUtilsSettings<>();
-    public static final ChatUtilsSettings<Integer> HOTKEY = new ChatUtilsSettings<>();
+    public static final ChatUtilsSettings<Integer> PEEK_HOTKEY = new ChatUtilsSettings<>();
 
     private String attribute;
     private T value;
