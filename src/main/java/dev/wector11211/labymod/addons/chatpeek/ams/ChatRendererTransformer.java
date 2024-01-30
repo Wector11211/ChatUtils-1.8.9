@@ -1,5 +1,6 @@
 package dev.wector11211.labymod.addons.chatpeek.ams;
 
+import dev.wector11211.labymod.addons.chatpeek.utils.Debug;
 import net.labymod.core.asm.global.ClassEditor;
 import net.minecraft.launchwrapper.IClassTransformer;
 import org.objectweb.asm.ClassReader;
@@ -10,7 +11,7 @@ public class ChatRendererTransformer implements IClassTransformer {
     @Override
     public byte[] transform(String name, String transformedName, byte[] basicClass) {
             if ("net.labymod.ingamechat.renderer.ChatRenderer".equals(name)) {
-                System.out.println("[ChatPeekAddon] Transforming ChatRenderer class (" + name + ")");
+                Debug.logger().info("Transforming ChatRenderer class (" + name + ")");
 
                 ClassEditor editor = new ChatPeekEditor();
 
