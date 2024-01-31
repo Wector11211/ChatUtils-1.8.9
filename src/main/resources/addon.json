@@ -3,7 +3,7 @@
   "name": "Chat Utils",
   "description": "Adds chat peek feature and preserves chat scrolling",
   "author": "Wector11211",
-  "icon": "https://icon.com/icon.png",
+  "icon": "https://i.imgur.com/KyGYg4T.png",
   "mainClass": "dev.wector11211.labymod.addons.chatpeek.ChatUtilsAddon",
   "transformerClass": "dev.wector11211.labymod.addons.chatpeek.ams.ChatRendererTransformer"
 }
